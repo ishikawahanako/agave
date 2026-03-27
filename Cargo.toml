@@ -45,6 +45,7 @@ members = [
     "keygen",
     "lattice-hash",
     "ledger",
+    "lite-rpc",
     "local-cluster",
     "logger",
     "measure",
