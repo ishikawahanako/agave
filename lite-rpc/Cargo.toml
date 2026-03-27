@@ -1,0 +1,71 @@
+[package]
+name = "agave-lite-rpc"
+description = "Minimal shred-ingesting Geyser + JSON-RPC server for Solana"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+agave-geyser-plugin-interface = { workspace = true }
+agave-logger = { workspace = true }
+agave-snapshots = { workspace = true }
+anyhow = { workspace = true }
+bytes = { workspace = true }
+clap = { workspace = true }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+num_cpus = { workspace = true }
+rayon = { workspace = true }
+solana-accounts-db = { workspace = true }
+solana-clap-utils = { workspace = true }
+solana-client = { workspace = true }
+solana-clock = { workspace = true }
+solana-commitment-config = { workspace = true }
+solana-core = { workspace = true }
+solana-download-utils = { workspace = true }
+solana-entry = { workspace = true }
+solana-epoch-schedule = { workspace = true }
+solana-genesis-config = { workspace = true }
+solana-genesis-utils = { workspace = true }
+solana-geyser-plugin-manager = { workspace = true }
+solana-gossip = { workspace = true, features = ["agave-unstable-api"] }
+solana-hash = { workspace = true }
+solana-keypair = { workspace = true }
+solana-ledger = { workspace = true }
+solana-measure = { workspace = true }
+solana-metrics = { workspace = true }
+solana-net-utils = { workspace = true }
+solana-perf = { workspace = true }
+solana-poh = { workspace = true }
+solana-pubkey = { workspace = true }
+solana-quic-definitions = { workspace = true }
+solana-rayon-threadlimit = { workspace = true }
+solana-rpc = { workspace = true }
+solana-rpc-client-api = { workspace = true }
+solana-runtime = { workspace = true }
+solana-sdk-ids = { workspace = true }
+solana-send-transaction-service = { workspace = true }
+solana-shred-version = { workspace = true }
+solana-signer = { workspace = true }
+solana-streamer = { workspace = true }
+solana-time-utils = { workspace = true }
+solana-tpu-client = { workspace = true }
+solana-turbine = { workspace = true }
+solana-unified-scheduler-pool = { workspace = true }
+solana-validator-exit = { workspace = true }
+solana-version = { workspace = true }
+solana-vote-program = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+
+[target.'cfg(not(any(target_env = "msvc", target_os = "freebsd")))'.dependencies]
+jemallocator = { workspace = true }
+
+[target."cfg(unix)".dependencies]
+signal-hook = { workspace = true }
